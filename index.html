@@ -1,0 +1,103 @@
+<!DOCTYPE html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>สามัคคีเภทคำฉันท์: ภารกิจหยุดแผนลับ</title>
+<link href="https://fonts.googleapis.com/css2?family=Mitr:wght@400;500&family=Sarabun:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#14123a;--gold:#e8b64a;--vi:#6a44b8;--red:#a3263c;--ink:#f6ecd2;--ok:#5fcf8a;--card:#241a55;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font:17px/1.65 Sarabun,sans-serif;color:var(--ink);background:var(--bg) radial-gradient(circle at 50% -10%,#4a2f8f,var(--bg) 60%) fixed}
+#app{max-width:760px;margin:auto;padding:14px}
+h1,h2,h3{font-family:Mitr,sans-serif;font-weight:500;color:var(--gold);margin:.3em 0}
+h1{font-size:clamp(26px,6vw,40px);line-height:1.3}
+.card{background:var(--card);border:1px solid #e8b64a55;border-radius:14px;padding:18px;margin:12px 0;box-shadow:0 0 24px #0006}
+.hud{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-size:15px}
+.hud b{color:var(--gold)}.bar{flex:1;min-width:120px;height:12px;background:#0006;border-radius:9px;overflow:hidden;border:1px solid #e8b64a66}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--red),var(--gold));transition:width .5s}
+.btn{font:500 17px Mitr,sans-serif;background:var(--gold);color:#2a1a00;border:0;border-radius:10px;padding:11px 22px;cursor:pointer;margin:6px 6px 6px 0}
+.btn:hover{filter:brightness(1.1)}.btn.g{background:transparent;color:var(--gold);border:1px solid var(--gold)}.btn:disabled{opacity:.4;cursor:not-allowed}
+.btn:focus-visible,.opt:focus-visible,.chip:focus-visible,.node:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.opt{display:block;width:100%;text-align:left;font:inherit;color:var(--ink);background:#14123a;border:2px solid #6a44b8;border-radius:10px;padding:11px 14px;margin:8px 0;cursor:pointer}
+.opt.sel{border-color:var(--gold);background:#3a2a7a}.opt.right{border-color:var(--ok);background:#14472e}.opt.wrong{border-color:#e0536b;background:#5a1626}
+.chip{font:inherit;color:var(--ink);background:#3a2a7a;border:1px solid var(--gold);border-radius:20px;padding:8px 14px;margin:4px;cursor:pointer;text-align:left}
+.zone{min-height:54px;border:2px dashed #e8b64a88;border-radius:10px;padding:6px;margin:8px 0}
+.map{display:grid;gap:10px}.node{display:flex;gap:12px;align-items:center;width:100%;font:inherit;color:var(--ink);text-align:left;background:linear-gradient(90deg,#3a2a7a,#241a55);border:2px solid var(--gold);border-radius:12px;padding:12px;cursor:pointer}
+.node:disabled{opacity:.45;border-color:#777;cursor:not-allowed}.node span{font-size:30px}
+.fb{border-left:5px solid var(--gold);padding:8px 12px;margin:10px 0;background:#0004;border-radius:6px}
+.hero{text-align:center;padding:26px 8px}.hero .em{font-size:54px;letter-spacing:8px;animation:glow 2.4s ease-in-out infinite alternate}
+@keyframes glow{to{text-shadow:0 0 26px var(--gold)}}
+.pop{animation:pop .5s}@keyframes pop{from{transform:scale(.8);opacity:0}}
+input,textarea{width:100%;font:inherit;padding:11px;border-radius:10px;border:2px solid var(--gold);background:#14123a;color:var(--ink)}
+table{width:100%;border-collapse:collapse;font-size:15px}td,th{padding:6px;border-bottom:1px solid #e8b64a44;text-align:left}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body><div id="app"></div>
+<script>
+const m=(q,o,a,e,h,p,b)=>({t:'m',q,o,a,e,h,p:p||10,b}),
+D=[
+{n:'ประตูแห่งความรู้',ic:'🚪',tm:20,q:[
+m('ใครเป็นผู้แต่งสามัคคีเภทคำฉันท์',['ชิต บุรทัต','สุนทรภู่','ศรีปราชญ์','เจ้าฟ้ากุ้ง'],0,'แต่งโดยนายชิต บุรทัต (ชิต บุนนาค) กวีสมัยรัชกาลที่ ๖','กวีสมัยรัชกาลที่ ๖'),
+m('วรรณคดีเรื่องนี้จัดเป็นคำประพันธ์ประเภทใด',['โคลงสี่สุภาพ','กาพย์ยานี ๑๑','คำฉันท์','ร่ายยาว'],2,'ใช้ฉันท์หลายชนิดแต่งเป็นเรื่องราว จึงเรียกว่าคำฉันท์','ชื่อเรื่องบอกอยู่แล้ว'),
+m('เนื้อเรื่องมีที่มาจากแหล่งใด',['นิทานพื้นบ้านไทย','พงศาวดารจีน','อรรถกถาในพุทธศาสนา','ตำนานกรีก'],2,'นำเรื่องจากอรรถกถาพระสูตรในพุทธศาสนา มาแต่งเป็นคำฉันท์','เรื่องเกิดในอินเดียโบราณ'),
+m('จุดมุ่งหมายสำคัญของการแต่งคือข้อใด',['เล่าเรื่องรัก','สอนวิธีทำสงคราม','เตือนสติให้คนในชาติสามัคคี','เฉลิมพระเกียรติกษัตริย์'],2,'ผู้แต่งต้องการเตือนใจคนไทยให้รักสามัคคี ไม่แตกแยก','ดูที่ชื่อเรื่อง คำว่า เภท แปลว่า แตก'),
+m('ใครคือผู้วางอุบายให้เจ้าลิจฉวีแตกกัน',['พระเจ้าอชาตศัตรู','วัสสการพราหมณ์','พระอานนท์','เจ้าลิจฉวีองค์ใหญ่'],1,'วัสสการพราหมณ์ มหาอำมาตย์แห่งมคธ เป็นผู้วางอุบาย','เป็นมหาอำมาตย์ของมคธ')]},
+{n:'นักสืบตามรอยเหตุการณ์',ic:'🔍',q:[
+{t:'o',q:'แตะการ์ดเรียงเหตุการณ์ตั้งแต่ต้นจนจบ (แตะการ์ดในช่องคำตอบเพื่อเอาออก)',items:['อชาตศัตรูหวังจะตีแคว้นวัชชี','วัสสการถูกลงโทษตามแผนลับ','วัสสการหนีไปวัชชีและได้รับความไว้วางใจ','วัสสการยุแยงเจ้าลิจฉวีทีละองค์','เจ้าลิจฉวีแตกสามัคคี เลิกประชุมกัน','ทัพมคธตีวัชชีแตก'],e:'เรื่องดำเนินจากความอยากได้ ไปสู่อุบาย การยุแยง ความแตกแยก และความพ่ายแพ้',h:'เริ่มที่ความต้องการของอชาตศัตรู และจบที่ผลลัพธ์',p:15},
+m('ข้อความใดไม่สอดคล้องกับเนื้อเรื่อง',['วัสสการเป็นมหาอำมาตย์แห่งมคธ','วัสสการแสร้งถูกลงโทษ','วัสสการเป็นกษัตริย์ลิจฉวีโดยกำเนิด','เจ้าลิจฉวีเคยประชุมกันสม่ำเสมอ'],2,'วัสสการเป็นชาวมคธ ไม่ใช่เจ้าลิจฉวี','ดูว่าเขาเป็นคนของฝ่ายใด'),
+m('เหตุการณ์ใดเกิดก่อน',['วัสสการแสร้งถูกลงโทษ','ทัพมคธตีวัชชีแตก','เจ้าลิจฉวีเลิกประชุม','เจ้าลิจฉวีหมดความไว้ใจกัน'],0,'การแสร้งถูกลงโทษเป็นจุดเริ่มต้นของแผน ที่เหลือคือผลที่ตามมา','อันไหนคือต้นแผน'),
+m('เหตุใดวัสสการได้รับความไว้วางใจจากชาววัชชี',['เพราะร่ำรวยมาก','เพราะเห็นว่าถูกมคธลงโทษอย่างรุนแรง จึงเชื่อว่าเขาเป็นฝ่ายตน','เพราะเป็นญาติเจ้าลิจฉวี','เพราะชนะการประลอง'],1,'การแสร้งถูกลงโทษทำให้วัชชีสงสารและเชื่อใจ','เขาแสดงตัวเป็นผู้ถูกกระทำ'),
+m('พระพุทธเจ้าตรัสธรรมที่ทำให้บ้านเมืองไม่เสื่อมกี่ข้อ',['๓ ข้อ','๕ ข้อ','๗ ข้อ','๑๐ ข้อ'],2,'อปริหานิยธรรม ๗ ประการ เช่น ประชุมกันเนืองนิตย์','มีเลขเจ็ด')]},
+{n:'เปิดโปงแผนลับวัสสการพราหมณ์',ic:'🕵️',q:[
+m('วัสสการถามเจ้าลิจฉวีทีละองค์ตามลำพัง แล้วนำคำตอบไปทำให้อีกองค์เข้าใจผิด เป็นกลวิธีใด',['การเจรจาสันติ','การยุแยงให้ระแวงกัน','การประกาศสงคราม','การสอนธรรมะ'],1,'เป็นกลวิธียุแยง ทำให้ต่างฝ่ายเกิดความระแวง','เป้าหมายคือให้เกิดอะไรระหว่างกษัตริย์'),
+m('โบนัสหลักฐาน: ข้อใดสนับสนุนคำตอบข้อก่อนได้ดีที่สุด',['เจ้าลิจฉวีต่างระแวงกันและกัน','เมืองวัชชีมีกำแพงสูง','วัสสการเป็นพราหมณ์','อชาตศัตรูมีกองทัพใหญ่'],0,'ผลของการยุแยงคือความระแวงในหมู่เจ้าลิจฉวี',null,5,1),
+m('เจตนาของวัสสการที่แท้จริงคืออะไร',['ช่วยให้วัชชีเจริญ','ทำลายความสามัคคี เพื่อให้มคธตีได้ง่าย','หาตำแหน่งในวัชชี','เป็นครูสอนกษัตริย์'],1,'เจตนาคือทำลายความสามัคคีเพื่อประโยชน์ของมคธ','ดูว่าเขาทำงานให้ใคร'),
+m('ผลที่เกิดกับเจ้าลิจฉวีหลังถูกยุแยงคือข้อใด',['ร่วมมือกันแน่นแฟ้น','ไม่ไว้ใจกัน เลิกประชุมหารือ','ยกทัพไปตีมคธ','ขับไล่วัสสการทันที'],1,'เมื่อไม่ไว้ใจกันก็เลิกประชุม ทำให้ขาดความพร้อมเพรียง','อปริหานิยธรรมข้อแรกคือการประชุม'),
+m('โบนัสหลักฐาน: ข้อใดคือหลักฐานว่าความแตกแยกเกิดขึ้นจริง',['เจ้าลิจฉวีไม่ยอมมาประชุมเมื่อถูกเรียก','วัสสการถูกเฆี่ยน','มคธมีพระราชา','แคว้นวัชชีมีแม่น้ำ'],0,'การไม่ยอมประชุมคือผลโดยตรงของความแตกสามัคคี',null,5,1),
+m('ข้อใดประเมินกลวิธีของวัสสการได้เหมาะสมที่สุด',['ฉลาดและอดทนแต่ใช้ไปในทางทำลาย','ไม่มีแผนใดเลย','ใช้กำลังรบเป็นหลัก','ทำเพราะถูกบังคับ'],0,'เขาใช้ปัญญาและเวลาวางแผนอย่างแยบยล แต่เป็นไปเพื่อทำลาย','เขาวางแผนอย่างรอบคอบ')]},
+{n:'สภาวิกฤตแห่งวัชชี',ic:'🏛️',q:[
+m('เพื่อนบอกว่ามีคนพูดจาว่าร้ายคุณลับหลัง ควรทำอย่างไรตามบทเรียนจากเรื่องนี้',['โกรธและตัดเพื่อน','ตรวจสอบข้อเท็จจริงและพูดคุยตรงๆ','ปล่อยข่าวกลับไป','เชื่อทันที'],1,'เจ้าลิจฉวีพ่ายเพราะเชื่อโดยไม่ตรวจสอบ การพูดตรงๆ ตัดอุบายยุแยงได้','ลองถามผู้ที่ถูกกล่าวถึงโดยตรง'),
+m('ทีมเห็นต่างกันและต่างคนต่างเงียบ ควรเลือกวิธีใด',['ให้หัวหน้าตัดสินคนเดียว','เปิดเวทีให้ทุกคนพูดและรับฟังกัน','แยกกันทำงาน','เลิกทำงาน'],1,'การรับฟังช่วยคืนความไว้วางใจ ตรงกับหลักการประชุมกันเนืองนิตย์','ข้อใดตรงข้ามกับการเลิกประชุม'),
+m('มีข่าวลือในกลุ่มแชต คุณควรทำอย่างไร',['แชร์ต่อทันที','ตรวจแหล่งข่าวก่อนเชื่อหรือแชร์','เชื่อเพราะคนแชร์เยอะ','ตอบโต้ด้วยอารมณ์'],1,'การตรวจสอบข้อมูลคือเกราะป้องกันอุบายยุแยง','ตั้งคำถามกับที่มาของข่าว'),
+m('ถ้าเจ้าลิจฉวีถามกันตรงๆ ก่อนเชื่อวัสสการ เรื่องน่าจะเป็นอย่างไร',['อุบายถูกเปิดโปง ความแตกแยกอาจไม่เกิด','วัชชีแพ้เร็วขึ้น','ไม่มีอะไรเปลี่ยน','มคธยิ่งแข็งแรง'],0,'อุบายยุแยงอาศัยความเข้าใจผิด การสื่อสารตรงจะทำลายมัน','การสื่อสารสำคัญอย่างไร'),
+m('ข้อคิดใดเชื่อมกับชีวิตจริงของนักเรียนได้ชัดที่สุด',['ตัดสินใจเร็วๆ ดีที่สุด','ความไว้วางใจและการตรวจสอบข้อมูลทำให้กลุ่มเข้มแข็ง','ควรทำงานคนเดียว','ใครพูดเก่งต้องถูก'],1,'บทเรียนคือสามัคคีต้องมีทั้งความไว้ใจและการตรวจสอบก่อนตัดสินใจ','คิดถึงงานกลุ่มของตนเอง')]},
+{n:'กู้คืนแคว้นวัชชี',ic:'🔐',q:[
+{t:'o',q:'ไขรหัสกู้แคว้น: เรียงขั้นตอนฟื้นความสามัคคีให้สมเหตุสมผล',items:['ตรวจสอบข้อเท็จจริง','พูดคุยกันตรงๆ','ประชุมรับฟังกัน','ร่วมมือกันป้องกันแผนร้าย'],e:'เริ่มจากข้อมูลที่ถูกต้อง สื่อสาร รับฟัง แล้วจึงร่วมมือกัน',h:'ต้องรู้ความจริงก่อนจึงจะคุยกันได้',p:15},
+m('ข้อใดเป็นหนึ่งในอปริหานิยธรรม ๗',['ประชุมกันเนืองนิตย์','แข่งขันกันเอง','เก็บความลับไม่บอกใคร','ตัดสินคนเดียว'],0,'การประชุมกันสม่ำเสมอเป็นข้อแรกของอปริหานิยธรรม','ข้อที่ถูกทำลายก่อน'),
+m('เหตุใดความแตกสามัคคีจึงนำไปสู่ความพ่ายแพ้',['เพราะขาดพลังร่วมและศัตรูฉวยโอกาสได้','เพราะไม่มีอาวุธ','เพราะฝนตก','เพราะแผนที่ผิด'],0,'เมื่อแตกแยก ทรัพยากรและกำลังใจกระจัดกระจาย ศัตรูจึงได้เปรียบ','นึกถึงสภาพวัชชีหลังเลิกประชุม'),
+m('การนำบทเรียนไปใช้ในห้องเรียนควรทำข้อใด',['ยอมรับความคิดเห็นที่ต่างกันและช่วยกันตรวจสอบข้อมูล','ให้คนเก่งทำแทน','ไม่พูดเรื่องขัดแย้ง','แบ่งกลุ่มแข่งกันตลอด'],0,'ความสามัคคีที่ดีคือเคารพความต่าง และร่วมกันหาความจริง','ใช้ทั้งการฟังและตรวจสอบ'),
+m('ฉากสุดท้าย: ข้อใดคือใจความของเรื่องที่สุด',['พลังของสามัคคีอยู่ที่ความไว้ใจและการสื่อสาร','ใครฉลาดที่สุดชนะ','กำลังทหารตัดสินทุกอย่าง','ความลับคือพลัง'],0,'สรุปคือสามัคคีป้องกันบ้านเมืองได้ และความแตกแยกคือจุดอ่อน','ตรงกับจุดมุ่งหมายของผู้แต่ง')]}
+];
+let ac,mute=false,G,tm,sel,hinted;
+const $=s=>document.querySelector(s),shuf=a=>[...a].sort(()=>Math.random()-.5);
+function snd(f,d=.15,t='sine'){if(mute)return;try{ac=ac||new AudioContext();const o=ac.createOscillator(),g=ac.createGain();o.type=t;o.frequency.value=f;g.gain.value=.07;o.connect(g);g.connect(ac.destination);o.start();o.stop(ac.currentTime+d)}catch(e){}}
+const sOk=()=>{snd(660);setTimeout(()=>snd(880),120)},sBad=()=>snd(180,.3,'sawtooth'),sWin=()=>[523,659,784,1047].forEach((f,i)=>setTimeout(()=>snd(f,.2),i*140));
+const total=()=>D.reduce((s,x)=>s+x.q.reduce((a,q)=>a+(q.p||10),0),0);
+function reset(){G={name:'',st:0,qi:0,sc:0,un:100,coin:0,open:1,res:D.map(()=>[])}}
+function hud(){return`<div class="hud"><b>${G.name||''}</b><span>⭐ ${G.sc}</span><span>🪙 ${G.coin}</span><span>🛡️ ความสามัคคี</span><div class="bar"><i style="width:${Math.max(G.un,0)}%"></i></div><button class="btn g" onclick="mute=!mute;this.textContent=mute?'🔇':'🔊'" aria-label="เปิดปิดเสียง">${mute?'🔇':'🔊'}</button></div>`}
+function start(){reset();$('#app').innerHTML=`<div class="hero card pop"><div class="em">🏯⚔️👑</div><h1>สามัคคีเภทคำฉันท์: ภารกิจหยุดแผนลับ ทำลายแคว้นวัชชี</h1><p>ความลับกำลังถูกเปิดเผย ความไว้วางใจกำลังสั่นคลอน คุณจะช่วยแคว้นวัชชีได้หรือไม่?</p><label for="nm">ชื่อผู้เล่นหรือชื่อทีม</label><input id="nm" maxlength="30" placeholder="เช่น ทีมผู้พิทักษ์ ม.6/1"><p><button class="btn" onclick="G.name=$('#nm').value.trim()||'ผู้พิทักษ์นิรนาม';map()">START GAME</button></p><small>เล่นเป็นทีม 4–5 คน ปรึกษากันก่อนเลือกคำตอบ ใช้เวลา 30–40 นาที</small></div>`}
+function map(){clearInterval(tm);$('#app').innerHTML=hud()+`<h2>แผนที่ภารกิจ</h2><div class="map">${D.map((s,i)=>`<button class="node" ${i<G.open?'':'disabled'} onclick="G.st=${i};G.qi=0;ask()"><span>${i<G.open?s.ic:'🔒'}</span><div><b>ด่านที่ ${i+1}: ${s.n}</b><br><small>${G.res[i].length>=s.q.length?'ผ่านแล้ว ✔ เล่นซ้ำได้':i<G.open?'พร้อมเล่น':'ผ่านด่านก่อนหน้าเพื่อปลดล็อก'}</small></div></button>`).join('')}</div>`}
+function ask(){clearInterval(tm);const s=D[G.st],q=s.q[G.qi];sel=null;hinted=0;
+if(G.qi===0)G.res[G.st]=[];
+const head=hud()+`<div class="card"><small>ด่านที่ ${G.st+1} ${s.n} · ข้อ ${G.qi+1}/${s.q.length}${q.b?' · โบนัสหลักฐาน +5':''}</small>`;
+if(q.t==='o'){G.pool=shuf(q.items);if(G.pool.join()===q.items.join())G.pool.reverse();G.ans=[];G.tries=0;$('#app').innerHTML=head+`<h3>${q.q}</h3><div class="zone" id="za"></div><div id="zp"></div><div id="fb"></div><div id="ct"><button class="btn" id="chk" onclick="chkO()">ตรวจคำตอบ</button><button class="btn g" onclick="hint()">💡 คำใบ้ (-3)</button></div></div>`;drawO();return}
+let t=s.tm?`<div class="bar"><i id="tb" style="width:100%;transition:none"></i></div>`:'';
+$('#app').innerHTML=head+`${t}<h3>${q.q}</h3>${q.o.map((o,i)=>`<button class="opt" onclick="pick(${i})">${o}</button>`).join('')}<div id="fb"></div><div id="ct"><button class="btn" id="chk" disabled onclick="chk()">ตรวจคำตอบ</button>${q.h?'<button class="btn g" onclick="hint()">💡 คำใบ้ (-3)</button>':''}</div></div>`;
+if(s.tm){let l=s.tm*10;tm=setInterval(()=>{l--;$('#tb').style.width=l/(s.tm*10)*100+'%';if(l<=0){clearInterval(tm);chk(1)}},100)}}
+function pick(i){if($('#chk').disabled&&sel!==null)return;sel=i;document.querySelectorAll('.opt').forEach((b,j)=>b.classList.toggle('sel',j===i));$('#chk').disabled=false}
+function hint(){const q=D[G.st].q[G.qi];hinted=1;$('#fb').innerHTML=`<div class="fb">💡 ${q.h}</div>`}
+function done(ok,q,msg){clearInterval(tm);const pts=ok?Math.max((q.p||10)-(hinted?3:0),1):0;G.sc+=pts;if(ok){G.coin++;sOk()}else{G.un-=10;sBad()}G.res[G.st].push(ok?pts:0);
+$('#fb').innerHTML=`<div class="fb pop">${ok?'✅ ถูกต้อง +'+pts+' คะแนน':'❌ ยังไม่ถูก'} ${msg||''}<br>${q.e}</div>`;
+$('#ct').innerHTML=`<button class="btn" onclick="next()">${G.qi+1<D[G.st].q.length?'ข้อต่อไป':'สรุปด่าน'}</button>`;}
+function chk(to){const q=D[G.st].q[G.qi];document.querySelectorAll('.opt').forEach((b,j)=>{b.disabled=true;if(j===q.a)b.classList.add('right');else if(j===sel)b.classList.add('wrong')});done(!to&&sel===q.a,q,to?'(หมดเวลา)':'')}
+function drawO(){const q=D[G.st].q[G.qi];$('#za').innerHTML=G.ans.map((t,i)=>`<button class="chip" onclick="G.pool.push(G.ans.splice(${i},1)[0]);drawO()">${i+1}. ${t}</button>`).join('')||'<small>แตะการ์ดด้านล่างเพื่อวางตามลำดับ</small>';$('#zp').innerHTML=G.pool.map((t,i)=>`<button class="chip" onclick="G.ans.push(G.pool.splice(${i},1)[0]);drawO()">${t}</button>`).join('')}
+function chkO(){const q=D[G.st].q[G.qi];if(G.pool.length){$('#fb').innerHTML='<div class="fb">วางการ์ดให้ครบทุกใบก่อน</div>';return}
+if(G.ans.join()===q.items.join()){document.querySelectorAll('.chip').forEach(b=>b.disabled=true);hinted=hinted||G.tries>0;done(true,q)}
+else{G.tries++;G.sc=Math.max(G.sc-2,0);sBad();$('#fb').innerHTML=`<div class="fb">❌ ลำดับยังไม่ถูก (-2) 💡 ${q.h}</div>`;if(G.tries>=3){G.ans=[...q.items];drawO();document.querySelectorAll('.chip').forEach(b=>b.disabled=true);done(false,q,'(เฉลยให้แล้ว)')}}}
+function next(){const s=D[G.st];if(++G.qi<s.q.length)return ask();
+const max=s.q.reduce((a,q)=>a+(q.p||10),0),got=G.res[G.st].reduce((a,b)=>a+b,0),r=got/max,medal=r>=.8?'🥇 เหรียญทอง':r>=.5?'🥈 เหรียญเงิน':'🥉 เหรียญทองแดง';
+sWin();G.coin+=r>=.8?3:r>=.5?2:1;if(G.st+1===G.open&&G.open<5)G.open++;
+try{localStorage.setItem('sk',JSON.stringify({n:G.name,sc:G.sc}))}catch(e){}
+$('#app').innerHTML=hud()+`<div class="card pop"><h2>ผ่านด่าน: ${s.n}</h2><p>${medal} · ได้ ${got}/${max} คะแนน</p><p>${r>=.8?'ยอดเยี่ยม! วิเคราะห์ได้แม่นยำ':r>=.5?'ทำได้ดี ลองทบทวนข้อที่พลาดเพื่อพัฒนาต่อ':'เก่งมากที่ไม่ยอมแพ้ ลองกลับมาเล่นด่านนี้ซ้ำเพื่อเก็บคะแนนเพิ่ม'}</p><div class="bar"><i style="width:${G.open*20-(G.st+1<5&&G.st+1<G.open?0:0)}%"></i></div><p><small>ความคืบหน้า ${Math.min(G.st+1,5)}/5 ด่าน</small></p>${G.st===4?'<button class="btn" onclick="fin()">ดูฉากจบ</button>':'<button class="btn" onclick="map()">กลับแผนที่</button>'}</div>`}
+function fin(){const r=G.sc/total(),e=r>=.85?['🛡️ ผู้พิทักษ์แห่งวัชชี','เข้าใจเนื้อหาและวิเคราะห์ได้ยอดเยี่ยม ท่านรักษาแคว้นไว้ได้'] :r>=.6?['🧠 นักวางกลยุทธ์ผู้ชาญฉลาด','วิเคราะห์เหตุการณ์ได้ดี แคว้นรอดมาได้ แม้ยังมีรอยร้าว']:['📖 นักเรียนรู้ผู้ไม่ยอมแพ้','พัฒนาความรู้ผ่านการแก้ปัญหา เล่นซ้ำเพื่อปกป้องแคว้นให้ได้'];
+$('#app').innerHTML=hud()+`<div class="card pop hero"><h1>${e[0]}</h1><p>${e[1]}</p><p><b>${G.sc}</b> / ${total()} คะแนน (${Math.round(r*100)}%) · 🪙 ${G.coin} เหรียญ</p></div>
+<div class="card"><h3>สรุปสำหรับครู</h3><table><tr><th>ด่าน</th><th>ตอบถูก</th><th>คะแนน</th></tr>${D.map((s,i)=>`<tr><td>${i+1}. ${s.n}</td><td>${G.res[i].filter(x=>x>0).length}/${s.q.length}</td><td>${G.res[i].reduce((a,b)=>a+b,0)}</td></tr>`).join('')}</table></div>
+<div class="card"><h3>คำถามสะท้อนคิด</h3><p>เหตุใดความแตกสามัคคีจึงนำไปสู่ความพ่ายแพ้ และเราจะป้องกันปัญหานี้ในชีวิตจริงได้อย่างไร</p><textarea rows="4" placeholder="ช่วยกันเขียนคำตอบของทีม"></textarea></div>
+<button class="btn" onclick="start()">เล่นใหม่</button><button class="btn g" onclick="map()">กลับไปแผนที่</button>`}
+start();
+</script></body></html>
